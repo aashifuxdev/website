@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { getOtherWorks } from "@/data/works";
 import PlaceholderImage from "@/components/ui/PlaceholderImage";
@@ -15,11 +16,17 @@ export default function OtherWorks({ currentSlug }: { currentSlug: string }) {
       <div className="grid sm:grid-cols-2 gap-6">
         {others.map((work) => (
           <Link key={work.slug} href={`/works/${work.slug}`} className="group">
-            <PlaceholderImage
-              aspectRatio="aspect-[4/3]"
-              label={work.title}
-              className="mb-4 group-hover:opacity-90 transition-opacity"
-            />
+            {work.coverImage ? (
+              <div className="relative w-full aspect-[4/3] mb-4 overflow-hidden group-hover:opacity-90 transition-opacity">
+                <Image src={work.coverImage} alt={work.title} fill className="object-cover" />
+              </div>
+            ) : (
+              <PlaceholderImage
+                aspectRatio="aspect-[4/3]"
+                label={work.title}
+                className="mb-4 group-hover:opacity-90 transition-opacity"
+              />
+            )}
             <Tag>{work.category}</Tag>
             <p className="text-sm font-semibold mt-1 mb-2 leading-snug">{work.title}</p>
             {work.ctaLabel && (

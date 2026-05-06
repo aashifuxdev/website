@@ -9,6 +9,7 @@ export interface Work {
   ctaHref?: string;
   featured?: boolean;
   wip?: boolean;
+  coverImage?: string;
 }
 
 export const works: Work[] = [
@@ -23,6 +24,7 @@ export const works: Work[] = [
     ctaLabel: "Visit AckoDrive",
     ctaHref: "#",
     featured: true,
+    coverImage: "/images/works-ackodrive-cover.png",
   },
   {
     slug: "finbox",
@@ -33,6 +35,7 @@ export const works: Work[] = [
     year: "2023",
     ctaLabel: "Visit Finbox",
     ctaHref: "#",
+    coverImage: "/images/works-finbox-cover.png",
   },
   {
     slug: "quickrecruit",
@@ -43,6 +46,7 @@ export const works: Work[] = [
     year: "2022",
     ctaLabel: "View case study",
     ctaHref: "#",
+    coverImage: "/images/works-quickrecruit-cover.png",
   },
   {
     slug: "yugaport",
@@ -53,6 +57,7 @@ export const works: Work[] = [
     year: "2022",
     ctaLabel: "View site",
     ctaHref: "#",
+    coverImage: "/images/works-yugaport-cover.png",
   },
   {
     slug: "influenza2",
@@ -62,6 +67,7 @@ export const works: Work[] = [
       "A platform connecting brands with influencers for targeted marketing campaigns.",
     year: "2023",
     wip: true,
+    coverImage: "/images/works-influenz-cover.png",
   },
 ];
 

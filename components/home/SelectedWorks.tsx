@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { works } from "@/data/works";
 import Tag from "@/components/ui/Tag";
@@ -44,11 +45,17 @@ function WorkCard({
   const isWip = work.wip;
   const content = (
     <div className={`group ${isWip ? "cursor-default" : "cursor-pointer"}`}>
-      <PlaceholderImage
-        aspectRatio={compact ? "aspect-[4/3]" : wide ? "aspect-[16/7]" : "aspect-[16/9]"}
-        label={work.title}
-        className="mb-4 group-hover:opacity-90 transition-opacity"
-      />
+      {work.coverImage ? (
+        <div className={`relative w-full mb-4 overflow-hidden ${compact ? "aspect-[4/3]" : wide ? "aspect-[16/7]" : "aspect-[16/9]"} group-hover:opacity-90 transition-opacity`}>
+          <Image src={work.coverImage} alt={work.title} fill className="object-cover" />
+        </div>
+      ) : (
+        <PlaceholderImage
+          aspectRatio={compact ? "aspect-[4/3]" : wide ? "aspect-[16/7]" : "aspect-[16/9]"}
+          label={work.title}
+          className="mb-4 group-hover:opacity-90 transition-opacity"
+        />
+      )}
       <div className="flex items-start justify-between gap-4">
         <div>
           <Tag>{work.category}</Tag>
