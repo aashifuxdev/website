@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Button from "@/components/ui/Button";
-import PlaceholderImage from "@/components/ui/PlaceholderImage";
 import { ArrowUpRight } from "lucide-react";
 
 const tools = ["Figma", "Framer", "Adobe XD"];
@@ -21,8 +21,8 @@ export default function AboutSection() {
       <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
         {/* Photo */}
         <div className="max-w-xs w-full">
-          <div className="rounded-t-full overflow-hidden">
-            <PlaceholderImage aspectRatio="aspect-[3/4]" label="Profile photo" />
+          <div className="rounded-t-full overflow-hidden relative aspect-[3/4]">
+            <Image src="/images/profile.png" alt="Aashif profile photo" fill className="object-cover" />
           </div>
         </div>
 
