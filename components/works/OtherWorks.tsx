@@ -1,8 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { getOtherWorks } from "@/data/works";
 import PlaceholderImage from "@/components/ui/PlaceholderImage";
+import ParallaxImage from "@/components/ui/ParallaxImage";
 import Tag from "@/components/ui/Tag";
 
 export default function OtherWorks({ currentSlug }: { currentSlug: string }) {
@@ -17,9 +17,12 @@ export default function OtherWorks({ currentSlug }: { currentSlug: string }) {
         {others.map((work) => (
           <Link key={work.slug} href={`/works/${work.slug}`} className="group">
             {work.coverImage ? (
-              <div className="relative w-full aspect-[4/3] mb-4 overflow-hidden group-hover:opacity-90 transition-opacity">
-                <Image src={work.coverImage} alt={work.title} fill className="object-cover" />
-              </div>
+              <ParallaxImage
+                src={work.coverImage}
+                alt={work.title}
+                aspectRatio="aspect-[4/3]"
+                className="mb-4 group-hover:opacity-90 transition-opacity"
+              />
             ) : (
               <PlaceholderImage
                 aspectRatio="aspect-[4/3]"

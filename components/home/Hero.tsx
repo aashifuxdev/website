@@ -1,4 +1,12 @@
+"use client";
+
+import { useScroll, useTransform, motion } from "framer-motion";
+
 export default function Hero() {
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 0.3], ["0%", "30%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
+
   return (
     <section className="relative max-w-site mx-auto px-6 pt-16 pb-20 overflow-hidden">
       {/* Vertical name — right side */}
@@ -9,7 +17,7 @@ export default function Hero() {
       {/* Left accent bar */}
       <div className="absolute left-0 top-16 bottom-20 w-1 bg-black hidden md:block" />
 
-      <div className="md:pl-8">
+      <motion.div style={{ y, opacity }} className="md:pl-8">
         <p className="text-sm text-gray-500 font-medium mb-6 tracking-wide uppercase">
           4 years of exp
         </p>
@@ -22,7 +30,7 @@ export default function Hero() {
           </span>
           <span className="block mt-2">Designer</span>
         </h1>
-      </div>
+      </motion.div>
     </section>
   );
 }
