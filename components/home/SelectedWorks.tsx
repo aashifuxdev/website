@@ -1,9 +1,9 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { works } from "@/data/works";
 import Tag from "@/components/ui/Tag";
 import PlaceholderImage from "@/components/ui/PlaceholderImage";
+import ParallaxImage from "@/components/ui/ParallaxImage";
 
 export default function SelectedWorks() {
   return (
@@ -46,9 +46,12 @@ function WorkCard({
   const content = (
     <div className={`group ${isWip ? "cursor-default" : "cursor-pointer"}`}>
       {work.coverImage ? (
-        <div className={`relative w-full mb-4 overflow-hidden ${compact ? "aspect-[4/3]" : wide ? "aspect-[16/7]" : "aspect-[16/9]"} group-hover:opacity-90 transition-opacity`}>
-          <Image src={work.coverImage} alt={work.title} fill className="object-cover" />
-        </div>
+        <ParallaxImage
+          src={work.coverImage}
+          alt={work.title}
+          aspectRatio={compact ? "aspect-[4/3]" : wide ? "aspect-[16/7]" : "aspect-[16/9]"}
+          className="mb-4 group-hover:opacity-90 transition-opacity"
+        />
       ) : (
         <PlaceholderImage
           aspectRatio={compact ? "aspect-[4/3]" : wide ? "aspect-[16/7]" : "aspect-[16/9]"}
