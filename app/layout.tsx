@@ -3,6 +3,7 @@ import { Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import SmoothScroll from "@/components/ui/SmoothScroll";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${oswald.variable} font-sans bg-white text-black antialiased`}>
+        <SmoothScroll />
         <Navbar />
         <main>{children}</main>
         <Footer />
