@@ -8,19 +8,27 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    company: "Kovai.co - Document360",
+    role: "Product designer",
+    period: "July 2025 – Present",
+    description:
+      "Improved usability and accessibility by refining workflows, aligning screens with a new design system, and deliver intuitive SaaS documentation experiences.",
+    logoPlaceholder: "D3",
+  },
+  {
     company: "Sketchbrahma Technologies",
     role: "Senior Product designer",
-    period: "Mar 2022 – Present",
+    period: "Nov 2022 – Jul 2025",
     description:
       "Experienced in project management and cross-functional collaboration, delivering exceptional user experiences with user-centric solutions on time.",
     logoPlaceholder: "SB",
   },
   {
-    company: "Acho",
+    company: "Acko",
     role: "Product designer",
     period: "May 2021 – Feb 2022",
     description:
-      "Delivering exceptional user experiences and design solutions, contributing to Acho's success under the renowned Anhu brand.",
+      "Delivering exceptional user experiences and design solutions, contributing to Acko's success under the renowned Anhu brand.",
     logoPlaceholder: "AC",
   },
   {

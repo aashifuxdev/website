@@ -5,7 +5,7 @@ export default function WorkExperience() {
     <section id="experience" className="max-w-site mx-auto px-6 py-20 border-t border-gray-200">
       <h2 className="text-display-sm mb-12">Work experience</h2>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
         {experiences.map((exp) => (
           <div key={exp.company} className="flex flex-col gap-3">
             {/* Logo placeholder */}
