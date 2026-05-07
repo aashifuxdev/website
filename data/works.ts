@@ -61,7 +61,7 @@ export const works: Work[] = [
   },
   {
     slug: "influenza2",
-    title: "Influenza2 (Influencer Marketing Platform)",
+    title: "InfluenZ (Influencer Marketing Platform)",
     category: "For Marketing Platform | App",
     description:
       "A platform connecting brands with influencers for targeted marketing campaigns.",

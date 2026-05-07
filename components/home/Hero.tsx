@@ -8,9 +8,9 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
 
   return (
-    <section className="relative max-w-site mx-auto px-6 pt-16 pb-20 overflow-hidden">
+    <section className="relative max-w-site mx-auto px-6 pt-16 pb-20 overflow-hidden min-h-[720px] flex items-center">
       {/* Vertical name — right side */}
-      <div className="absolute right-6 top-1/2 -translate-y-1/2 writing-vertical text-[11px] font-bold tracking-[0.3em] text-gray-300 select-none hidden lg:block">
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 writing-vertical text-[clamp(4rem,8vw,7rem)] font-black tracking-[0.1em] text-gray-100 select-none hidden lg:block leading-none">
         AASHIF ALI
       </div>
 
