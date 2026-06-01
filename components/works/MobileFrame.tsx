@@ -15,8 +15,8 @@ export default function MobileFrame({ src, label, alt }: MobileFrameProps) {
       <div
         style={{
           width: 360,
-          height: 720,
-          border: "3px solid #333",
+          height: 640,
+          border: "10px solid #333",
           borderRadius: 44,
           backgroundColor: "#111",
           overflow: "hidden",
