@@ -19,7 +19,7 @@ export default function MobileFrame({ src, label, alt }: MobileFrameProps) {
           border: "10px solid #333",
           borderRadius: 44,
           backgroundColor: "#111",
-          overflow: "hidden",
+          overflow: "clip",
           position: "relative",
           flexShrink: 0,
         }}
@@ -28,10 +28,11 @@ export default function MobileFrame({ src, label, alt }: MobileFrameProps) {
         <div
           style={{
             height: "100%",
-            overflowY: "auto",
+            overflowY: "scroll",
             overflowX: "hidden",
             scrollbarWidth: "none",
             WebkitOverflowScrolling: "touch",
+            touchAction: "pan-y",
           } as React.CSSProperties}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
