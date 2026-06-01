@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { works } from "@/data/works";
 import Tag from "@/components/ui/Tag";
 import PlaceholderImage from "@/components/ui/PlaceholderImage";
+import ParallaxImage from "@/components/ui/ParallaxImage";
 
 export default function SelectedWorks() {
   return (
@@ -44,11 +45,20 @@ function WorkCard({
   const isWip = work.wip;
   const content = (
     <div className={`group ${isWip ? "cursor-default" : "cursor-pointer"}`}>
-      <PlaceholderImage
-        aspectRatio={compact ? "aspect-[4/3]" : wide ? "aspect-[16/7]" : "aspect-[16/9]"}
-        label={work.title}
-        className="mb-4 group-hover:opacity-90 transition-opacity"
-      />
+      {work.coverImage ? (
+        <ParallaxImage
+          src={work.coverImage}
+          alt={work.title}
+          aspectRatio={compact ? "aspect-[4/3]" : wide ? "aspect-[16/7]" : "aspect-[16/9]"}
+          className="mb-4 group-hover:opacity-90 transition-opacity"
+        />
+      ) : (
+        <PlaceholderImage
+          aspectRatio={compact ? "aspect-[4/3]" : wide ? "aspect-[16/7]" : "aspect-[16/9]"}
+          label={work.title}
+          className="mb-4 group-hover:opacity-90 transition-opacity"
+        />
+      )}
       <div className="flex items-start justify-between gap-4">
         <div>
           <Tag>{work.category}</Tag>
