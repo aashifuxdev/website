@@ -11,25 +11,19 @@ export default function MobileFrame({ src, label, alt }: MobileFrameProps) {
         {label}
       </p>
 
-      {/* Phone frame */}
-      <div
-        style={{
-          width: 360,
-          height: 640,
-          border: "10px solid #333",
-          borderRadius: 44,
-          backgroundColor: "#111",
-          overflow: "clip",
-          position: "relative",
-          flexShrink: 0,
-        }}
-      >
-        {/* Scrollable image viewport */}
+      {/* Outer wrapper — sizing only, no overflow */}
+      <div style={{ position: "relative", width: 360, height: 640, flexShrink: 0 }}>
+
+        {/* Scrollable viewport — clips content via its own border-radius */}
         <div
+          data-lenis-prevent
           style={{
+            width: "100%",
             height: "100%",
             overflowY: "scroll",
             overflowX: "hidden",
+            borderRadius: 34,
+            backgroundColor: "#111",
             scrollbarWidth: "none",
             WebkitOverflowScrolling: "touch",
             touchAction: "pan-y",
@@ -42,6 +36,17 @@ export default function MobileFrame({ src, label, alt }: MobileFrameProps) {
             style={{ width: "100%", height: "auto", display: "block" }}
           />
         </div>
+
+        {/* Decorative border overlay — pointer-events none so it never blocks scroll */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            border: "10px solid #333",
+            borderRadius: 44,
+            pointerEvents: "none",
+          }}
+        />
       </div>
     </div>
   );
