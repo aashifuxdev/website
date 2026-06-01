@@ -146,12 +146,12 @@ export default function AckodriveCase() {
           </h3>
           <div className="flex flex-col lg:flex-row gap-10 justify-center items-start overflow-x-auto">
             <MobileFrame
-              src="/images/works/ackodrive/old.jpg"
+              src="/images/works/ackodrive/old.png"
               label="Current"
               alt="Current MM page"
             />
             <MobileFrame
-              src="/images/works/ackodrive/new.jpg"
+              src="/images/works/ackodrive/new.png"
               label="Redesigned"
               alt="Redesigned MM page"
             />
