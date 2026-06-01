@@ -1,3 +1,5 @@
+"use client";
+
 interface MobileFrameProps {
   src: string;
   label: string;
@@ -5,18 +7,22 @@ interface MobileFrameProps {
 }
 
 export default function MobileFrame({ src, label, alt }: MobileFrameProps) {
+  const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+  };
+
   return (
     <div className="flex flex-col items-center gap-4">
       <p className="text-xs text-gray-400 uppercase tracking-widest font-medium">
         {label}
       </p>
 
-      {/* Outer wrapper — sizing only, no overflow */}
       <div style={{ position: "relative", width: 360, height: 640, flexShrink: 0 }}>
 
-        {/* Scrollable viewport — clips content via its own border-radius */}
+        {/* Scrollable viewport */}
         <div
           data-lenis-prevent
+          onWheel={handleWheel}
           style={{
             width: "100%",
             height: "100%",
@@ -37,7 +43,7 @@ export default function MobileFrame({ src, label, alt }: MobileFrameProps) {
           />
         </div>
 
-        {/* Decorative border overlay — pointer-events none so it never blocks scroll */}
+        {/* Border overlay — never blocks scroll */}
         <div
           style={{
             position: "absolute",
