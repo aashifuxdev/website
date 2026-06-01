@@ -5,6 +5,7 @@ import MetricRow from "@/components/works/MetricRow";
 import HighlightBox from "@/components/works/HighlightBox";
 import OtherWorks from "@/components/works/OtherWorks";
 import PlaceholderImage from "@/components/ui/PlaceholderImage";
+import MobileFrame from "@/components/works/MobileFrame";
 
 export default function AckodriveCase() {
   return (
@@ -138,18 +139,22 @@ export default function AckodriveCase() {
           </div>
         </div>
 
-        {/* Before / After */}
+        {/* Before / After — mobile frames */}
         <div className="mb-16">
-          <h3 className="text-base font-semibold mb-5">Current MM page vs Redesigned MM Page</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <p className="text-xs text-gray-400 uppercase tracking-widest mb-3">Current</p>
-              <PlaceholderImage aspectRatio="aspect-[9/16]" label="Current MM page" />
-            </div>
-            <div>
-              <p className="text-xs text-gray-400 uppercase tracking-widest mb-3">Redesigned</p>
-              <PlaceholderImage aspectRatio="aspect-[9/16]" label="Redesigned MM page" />
-            </div>
+          <h3 className="text-base font-semibold mb-8">
+            Current MM page vs Redesigned MM Page
+          </h3>
+          <div className="flex flex-col lg:flex-row gap-10 justify-center items-start overflow-x-auto">
+            <MobileFrame
+              src="/images/works/ackodrive/old.jpg"
+              label="Current"
+              alt="Current MM page"
+            />
+            <MobileFrame
+              src="/images/works/ackodrive/new.jpg"
+              label="Redesigned"
+              alt="Redesigned MM page"
+            />
           </div>
         </div>
 
